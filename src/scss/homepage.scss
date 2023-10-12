@@ -248,6 +248,28 @@ transform: scale(1.1);
   iframe {
     margin-right: 20px;
   }
+
+  @media only screen and (max-width: 600px) {
+    /* Define the maximum width for phone mode, adjust as needed */
+    iframe {
+      display: none; /* Hide the iframe on small screens */
+    }
+
+    /* Center the text in phone mode */
+    .lieu {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .lieu img {
+      max-width: 100%; /* Make the image full width in phone mode */
+      margin-bottom: 10px; /* Add some spacing between image and text */
+    }
+
+    p {
+      width: auto; /* Make the text full width in phone mode */
+    }
+  }
 }
 
 :root {
