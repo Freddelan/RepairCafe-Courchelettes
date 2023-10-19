@@ -1,19 +1,10 @@
 import React from "react";
-import facebook from "../media/facebook-logo-2019.png";
 import "../scss/footer.scss";
 import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div className="page-footer">
-      {/* <div className="logoFacebook">
-        <Link to="https://www.facebook.com/RepairCafeFrance" target="_blank">
-          <img className="facebook" src={facebook} alt="logo de facebook" />
-        </Link>
-      </div> */}
       <div className="section">
-        {/* <Link className="rgpd" to="/RGPD" target="_blank">
-          RGPD
-        </Link> */}
         <Link className="membres" to="/membres" target="_blank">
           Membres
         </Link>

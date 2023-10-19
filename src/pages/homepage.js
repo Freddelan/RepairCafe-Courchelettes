@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navigation from "../components/Navigation.js";
 import "../scss/homepage.scss";
 import bandeau2 from "../media/bandeau3.jpg";
@@ -14,12 +14,85 @@ import vaisselle from "../media/lave-vaisselle.png";
 import four from "../media/four.png";
 import entretien from "../media/entretien.jpg";
 import Footer from "../components/Footer.js";
+import axios from "axios";
+import thermo from "../media/thermometre.png";
+const Homepage = () => {
+  const [weatherData, setWeatherData] = useState(null);
 
-const homepage = () => {
+  const apiKey =
+    "d9189c97f2c0f9925e1370024e3b46c10f00f5cdd6d87fb2c01125b5bc57aa21";
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `https://api.meteo-concept.com/api/forecast/daily?token=${apiKey}&insee=59156`
+        );
+        setWeatherData(response.data);
+      } catch (error) {
+        console.error(
+          "Erreur lors de la récupération des données météorologiques :",
+          error
+        );
+      }
+    };
+
+    fetchData();
+  }, [apiKey]);
+
+  const getDayLabel = (dayIndex) => {
+    const daysOfWeek = ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"];
+    const today = new Date().getDay();
+    const forecastDay = (today + dayIndex) % 7;
+
+    return daysOfWeek[forecastDay];
+  };
+
+  const getTemperatureColor = (temperature) => {
+    if (temperature < 1) {
+      return "red";
+    } else if (temperature < 10) {
+      return "orange";
+    } else {
+      return "green";
+    }
+  };
   return (
     <div className="containerAlpha">
       <Navigation />
+      <div className="container-weath">
+        <div id="weatherData">
+          {weatherData ? (
+            <div className="weath-data">
+              <img src={thermo} alt="thermomètre graduel en degrés" />
+              <p className="ville">Ville: {weatherData.city.name}</p>
 
+              <h2>Prévisions:</h2>
+              {weatherData.forecast.slice(0, 3).map((forecastDay, index) => {
+                const forecastDate = new Date();
+                forecastDate.setDate(forecastDate.getDate() + index);
+
+                const temperatureColor = getTemperatureColor(forecastDay.tmin);
+
+                return (
+                  <div key={index} className="jour">
+                    <p>{getDayLabel(index)}</p>
+
+                    <p className="minimale" style={{ color: temperatureColor }}>
+                      Température minimale: {forecastDay.tmin} °C
+                    </p>
+                    <p className="maximale" style={{ color: temperatureColor }}>
+                      Température maximale: {forecastDay.tmax} °C
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          ) : (
+            <p>Chargement des données météorologiques...</p>
+          )}
+        </div>
+      </div>
       <div id="bandeau">
         <img className="bandeau" src={bandeau2} alt="un reparateur" />
       </div>
@@ -211,4 +284,4 @@ const homepage = () => {
   );
 };
 
-export default homepage;
+export default Homepage;

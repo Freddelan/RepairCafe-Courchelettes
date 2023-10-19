@@ -5,22 +5,19 @@ import Footer from "../components/Footer";
 import "../scss/membres.scss";
 
 const Membres = () => {
-  const membres = [
-    { nom: "Patrick COEUGNET", rôle: "Président" },
-    { nom: "Michel BENEZIT", rôle: "Secrétaire" },
-  ];
-
   return (
     <div className="container-membres">
       <Navigation />
       <div className="content">
         <h2>Notre Équipe</h2>
         <ul className="membres-list">
-          {membres.map((membre, index) => (
-            <li key={index}>
-              <strong>{membre.nom}</strong> - {membre.rôle}
-            </li>
-          ))}
+          <li>
+            <span className="spam">Patrick COEUGNET-</span> Président <br />
+            patrick.coeugnet@wanadoo.fr <br /> Tél : 06.79.98.30.43
+          </li>
+          <li>
+            <spam className="spam"> Michel BENEZIT-</spam> Secrétaire <br />
+          </li>
         </ul>
       </div>
       <Footer />
