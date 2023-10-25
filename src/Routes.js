@@ -8,7 +8,7 @@ import membres from "./pages/membres";
 function LaRoute() {
   return (
     <div>
-      <Router>
+      <Router basename="/RepairCafe-Courchelettes/repaircafe">
         <Routes>
           <Route path="/" Component={homepage} />
           <Route path="/apropos" Component={about} />
