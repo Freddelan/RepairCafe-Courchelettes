@@ -64,7 +64,10 @@ const Homepage = () => {
         <div id="weatherData">
           {weatherData ? (
             <div className="weath-data">
-              <img src={thermo} alt="thermomètre graduel en degrés" />
+              <img
+                src={process.env.PUBLIC_URL + thermo}
+                alt="thermomètre graduel en degrés"
+              />
               <p className="ville">Ville: {weatherData.city.name}</p>
 
               <h2>Prévisions:</h2>
@@ -94,7 +97,11 @@ const Homepage = () => {
         </div>
       </div>
       <div id="bandeau">
-        <img className="bandeau" src={bandeau2} alt="un reparateur" />
+        <img
+          className="bandeau"
+          src={process.env.PUBLIC_URL + bandeau2}
+          alt="un reparateur"
+        />
       </div>
       <div className="cquoi">
         <h1>
@@ -103,7 +110,7 @@ const Homepage = () => {
         <div className="presentation">
           <img
             className="partage"
-            src={partage}
+            src={process.env.PUBLIC_URL + partage}
             alt="homme et enfant travail"
           />
           <div class="element-avec-curseur-personnalise">
@@ -155,56 +162,68 @@ const Homepage = () => {
         <div class="marquee">
           <div class="marquee__group">
             <div>
-              <img src={cheveux} alt="seche-cheveux" />
+              <img src={process.env.PUBLIC_URL + cheveux} alt="seche-cheveux" />
             </div>
             <div>
-              <img src={cuiseur} alt="cuiseur à riz" />
+              <img src={process.env.PUBLIC_URL + cuiseur} alt="cuiseur à riz" />
             </div>
             <div>
-              <img src={fer} alt="fer à repasser" />
+              <img src={process.env.PUBLIC_URL + fer} alt="fer à repasser" />
             </div>
             <div>
-              <img src={aspirateur} alt="aspirateur" />
+              <img src={process.env.PUBLIC_URL + aspirateur} alt="aspirateur" />
             </div>
             <div>
-              <img src={four} alt="four micro-onde" />
+              <img src={process.env.PUBLIC_URL + four} alt="four micro-onde" />
             </div>
             <div>
-              <img src={tele} alt="tele" />
+              <img src={process.env.PUBLIC_URL + tele} alt="tele" />
             </div>
             <div>
-              <img src={machine} alt="machine à laver" />
+              <img
+                src={process.env.PUBLIC_URL + machine}
+                alt="machine à laver"
+              />
             </div>
             <div>
-              <img src={vaisselle} alt="lave-vaisselle" />
+              <img
+                src={process.env.PUBLIC_URL + vaisselle}
+                alt="lave-vaisselle"
+              />
             </div>
           </div>
         </div>
         <div class="marquee marquee--reverse">
           <div class="marquee__group">
             <div>
-              <img src={vaisselle} alt="lave-vaisselle" />
+              <img
+                src={process.env.PUBLIC_URL + vaisselle}
+                alt="lave-vaisselle"
+              />
             </div>
             <div>
-              <img src={machine} alt="machine à laver" />
+              <img
+                src={process.env.PUBLIC_URL + machine}
+                alt="machine à laver"
+              />
             </div>{" "}
             <div>
-              <img src={tele} alt="tele" />
+              <img src={process.env.PUBLIC_URL + tele} alt="tele" />
             </div>
             <div>
-              <img src={four} alt="four micro-onde" />
+              <img src={process.env.PUBLIC_URL + four} alt="four micro-onde" />
             </div>
             <div>
-              <img src={aspirateur} alt="aspirateur" />
+              <img src={process.env.PUBLIC_URL + aspirateur} alt="aspirateur" />
             </div>
             <div>
-              <img src={fer} alt="fer à repasser" />
+              <img src={process.env.PUBLIC_URL + fer} alt="fer à repasser" />
             </div>
             <div>
-              <img src={cuiseur} alt="cuiseur à riz" />
+              <img src={process.env.PUBLIC_URL + cuiseur} alt="cuiseur à riz" />
             </div>{" "}
             <div>
-              <img src={cheveux} alt="seche-cheveux" />
+              <img src={process.env.PUBLIC_URL + cheveux} alt="seche-cheveux" />
             </div>
           </div>
         </div>
@@ -215,7 +234,7 @@ const Homepage = () => {
         </h1>
         <img
           className="img-benevole"
-          src={entretien}
+          src={process.env.PUBLIC_URL + entretien}
           alt="homme qui répare un appareil ménager"
         />
         <div className="content-benevole">
@@ -264,7 +283,11 @@ const Homepage = () => {
           REPAIR CAFE <spam className="spam2">c'est où ?</spam>
         </h1>
         <div className="lieu">
-          <img id="lieu" src={outils6} alt="perceuse jaune" />
+          <img
+            id="lieu"
+            src={process.env.PUBLIC_URL + outils6}
+            alt="perceuse jaune"
+          />
           <p>
             Nous nous retrouvons le dernier mardi de chaque mois entre 17h00 et
             19h00 dans la salle Emilie Herin de Courchelettes.

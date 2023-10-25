@@ -1,20 +1,20 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import homepage from "./pages/homepage";
-import about from "./pages/apropos";
+import Homepage from "./pages/homepage";
+import About from "./pages/apropos";
 
 import RGPD from "./pages/RGPD";
-import membres from "./pages/membres";
+import Membres from "./pages/membres";
 function LaRoute() {
   return (
     <div>
       <Router basename={process.env.PUBLIC_URL}>
         <Routes>
-          <Route path="/" Component={homepage} />
-          <Route path="/apropos" Component={about} />
+          <Route path="/" element={<Homepage />} />
+          <Route path="/apropos" element={<About />} />
 
-          <Route path="/rgpd" Component={RGPD} />
-          <Route path="/membres" Component={membres} />
+          <Route path="/rgpd" element={<RGPD />} />
+          <Route path="/membres" element={<Membres />} />
         </Routes>
       </Router>
     </div>
