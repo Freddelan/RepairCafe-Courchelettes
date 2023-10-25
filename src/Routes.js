@@ -8,7 +8,7 @@ import membres from "./pages/membres";
 function LaRoute() {
   return (
     <div>
-      <Router basename="/RepairCafe-Courchelettes/repaircafe">
+      <Router basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route path="/" Component={homepage} />
           <Route path="/apropos" Component={about} />
