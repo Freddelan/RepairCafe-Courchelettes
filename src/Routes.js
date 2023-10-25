@@ -8,15 +8,17 @@ import Membres from "./pages/membres";
 function LaRoute() {
   return (
     <div>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/apropos" element={<About />} />
+      <BrowserRouter>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/apropos" element={<About />} />
 
-          <Route path="/rgpd" element={<RGPD />} />
-          <Route path="/membres" element={<Membres />} />
-        </Routes>
-      </Router>
+            <Route path="/rgpd" element={<RGPD />} />
+            <Route path="/membres" element={<Membres />} />
+          </Routes>
+        </Router>
+      </BrowserRouter>
     </div>
   );
 }
