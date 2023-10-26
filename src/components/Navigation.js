@@ -31,7 +31,7 @@ const Navigation = () => {
         <div class="element-avec-curseur-personnalise2">
           <ul className="navigation-list">
             <li className="navigation-item">
-              <NavLink to={process.env.PUBLIC_URL + "/"}>Accueil</NavLink>
+              <NavLink to={"/"}>Accueil</NavLink>
             </li>
             <li className="navigation-item">
               <NavLink to="/apropos">A propos </NavLink>

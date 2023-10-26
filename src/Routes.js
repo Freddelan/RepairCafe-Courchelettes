@@ -8,17 +8,15 @@ import Membres from "./pages/membres";
 function LaRoute() {
   return (
     <div>
-      <BrowserRouter>
-        <Router>
-          <Routes>
-            <Route path="/" element={<Homepage />} />
-            <Route path="/apropos" element={<About />} />
+      <Router basename={process.env.PUBLIC_URL}>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/apropos" element={<About />} />
 
-            <Route path="/rgpd" element={<RGPD />} />
-            <Route path="/membres" element={<Membres />} />
-          </Routes>
-        </Router>
-      </BrowserRouter>
+          <Route path="/rgpd" element={<RGPD />} />
+          <Route path="/membres" element={<Membres />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
