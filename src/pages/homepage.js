@@ -208,32 +208,6 @@ const Homepage = () => {
             </div>
           </div>
         </div>
-        <div class="marquee__group">
-          <div>
-            <img src={vaisselle} alt="lave-vaisselle" />
-          </div>
-          <div>
-            <img src={machine} alt="machine à laver" />
-          </div>{" "}
-          <div>
-            <img src={tele} alt="tele" />
-          </div>
-          <div>
-            <img src={four} alt="four micro-onde" />
-          </div>
-          <div>
-            <img src={aspirateur} alt="aspirateur" />
-          </div>
-          <div>
-            <img src={fer} alt="fer à repasser" />
-          </div>
-          <div>
-            <img src={cuiseur} alt="cuiseur à riz" />
-          </div>{" "}
-          <div>
-            <img src={cheveux} alt="seche-cheveux" />
-          </div>
-        </div>
       </article>
       <div className="benevole">
         <h1>
