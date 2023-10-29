@@ -33,7 +33,8 @@
       "react-app/jest"
     ]
   },
-  "homepage": "https://freddelan.github.io/RepairCafe-Courchelettes",
+  "homepage": ".",
+
   "browserslist": {
     "production": [
       ">0.2%",
