@@ -1,7 +1,7 @@
 // Membres.jsx
 import React from "react";
-import Navigation from "../../components/Navigation";
-import Footer from "../../components/Footer";
+import Navigation from "../components/Navigations";
+import Footer from "../components/Footer";
 import "../scss/membres.scss";
 
 const Membres = () => {
