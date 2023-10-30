@@ -1,7 +1,7 @@
 import React from "react";
 import "../scss/apropos.scss";
-import Navigation from "../components/Navigation";
-import Footer from "../components/Footer";
+import Navigation from "../../components/Navigation";
+import Footer from "../../components/Footer";
 
 const Apropos = () => {
   return (
