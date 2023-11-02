@@ -106,7 +106,7 @@ const Homepage = () => {
             src={partage}
             alt="homme et enfant travail"
           />
-          <div class="element-avec-curseur-personnalise">
+          <div className="element-avec-curseur-personnalise">
             <p className="clear-left">
               Un "Repair Café" est un concept qui désigne un événement ou un
               lieu où des bénévoles compétents offrent gratuitement leurs
@@ -151,9 +151,9 @@ const Homepage = () => {
         </div>
       </div>
 
-      <article class="wrapper">
-        <div class="marquee">
-          <div class="marquee__group">
+      <article className="wrapper">
+        <div className="marquee">
+          <div className="marquee__group">
             <div>
               <img src={cheveux} alt="seche-cheveux" />
             </div>
@@ -180,8 +180,8 @@ const Homepage = () => {
             </div>
           </div>
         </div>
-        <div class="marquee marquee--reverse">
-          <div class="marquee__group">
+        <div className="marquee marquee--reverse">
+          <div className="marquee__group">
             <div>
               <img src={vaisselle} alt="lave-vaisselle" />
             </div>
@@ -274,9 +274,9 @@ const Homepage = () => {
             src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d40709.84509992994!2d3.0909547426513573!3d50.378388099657606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1695883811798!5m2!1sfr!2sfr"
             width="300"
             height="200"
-            allowfullscreen=""
+            allowFullScreen=""
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
+            referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
       </div>

@@ -11,7 +11,7 @@ const Footer = () => {
       </div>
       <div className="copyright-container">
         <Link
-          to="/"
+          to="/RepairCafe-Courchelettes"
           className="copyright"
           onClick={() => window.scrollTo(0, 0)}
         >

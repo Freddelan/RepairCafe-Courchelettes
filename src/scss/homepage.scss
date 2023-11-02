@@ -5,21 +5,24 @@
   overflow-x: hidden;
 
   div#weatherData {
+    width: 70%;
     margin-top: 20px; 
-    margin-left: 10px;
+    margin-left: 15%;
     margin-right: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc; 
+    border-radius: 25px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
     font-weight: 300; 
-  
+  img{
+    margin-top: 20px;
+  width: 6%;
+  height: 2%;
+}
  .weath-data{
 display: flex;
 
-img{
-  width: 5%;
-  height: auto;
-}
+margin-left: 10%;
    h2 {
     font-weight: 300; 
     margin-top: 8px;
@@ -28,26 +31,41 @@ img{
 
   .jour{
     display:contents;
-    padding-right: 15px;
+    
+    
   }
-p {
-  padding-right: 15px;
-}
   .ville{
     width: 12%;
     font-weight: 800;
     color: #2626a0;
   }
-} 
-.minimale {
-  background-color: rgb(250, 29, 5);
-  text-align: center;
-}
-.maximale {
-  background-color: rgba(0, 100, 0, 0.889);
-  text-align: center;
+  .data{
+    display: flex;
+p {
+  
+  font-size: px;
+  border-radius: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
+.day{
+  margin-top: 25px;
+}
+  
+} 
+.minimale {
+  background-color: rgba(115, 111, 110, 0.671);
+  margin-top: 20px;
+}
+.maximale {
+  background-color: rgba(0, 100, 0, 0.552);
+   margin-top: 20px;
+  
+}
+
+
+}
 
 }
 }

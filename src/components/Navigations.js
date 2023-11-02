@@ -11,7 +11,7 @@ const Navigation = () => {
   };
   return (
     <div className="containerNav">
-      <Link to="/" className="logo">
+      <Link to="/RepairCafe-Courchelettes" className="logo">
         <img
           className="imglogo"
           src={repaircafelogo}
@@ -28,10 +28,10 @@ const Navigation = () => {
       </div>
 
       <nav className="lienNav">
-        <div class="element-avec-curseur-personnalise2">
+        <div className="element-avec-curseur-personnalise2">
           <ul className="navigation-list">
             <li className="navigation-item">
-              <NavLink to={"/"}>Accueil</NavLink>
+              <NavLink to={"/RepairCafe-Courchelettes"}>Accueil</NavLink>
             </li>
             <li className="navigation-item">
               <NavLink to="/apropos">A propos </NavLink>

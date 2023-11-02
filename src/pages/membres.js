@@ -16,7 +16,7 @@ const Membres = () => {
             patrick.coeugnet@wanadoo.fr <br /> Tél : 06.79.98.30.43
           </li>
           <li>
-            <spam className="spam"> Michel BENEZIT-</spam> Secrétaire <br />
+            <span className="spam"> Michel BENEZIT-</span> Secrétaire <br />
           </li>
         </ul>
       </div>

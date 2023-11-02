@@ -16,6 +16,7 @@ import entretien from "../media/entretien.jpg";
 import Footer from "../components/Footer.js";
 import axios from "axios";
 import thermo from "../media/thermometre.png";
+import ScrollingText from "../components/scrollingText";
 const Homepage = () => {
   const [weatherData, setWeatherData] = useState(null);
 
@@ -52,7 +53,7 @@ const Homepage = () => {
     if (temperature < 1) {
       return "red";
     } else if (temperature < 10) {
-      return "orange";
+      return "white";
     } else {
       return "green";
     }
@@ -68,25 +69,65 @@ const Homepage = () => {
               <p className="ville">Ville: {weatherData.city.name}</p>
 
               <h2>Prévisions:</h2>
-              {weatherData.forecast.slice(0, 3).map((forecastDay, index) => {
-                const forecastDate = new Date();
-                forecastDate.setDate(forecastDate.getDate() + index);
+              <div className="data">
+                {weatherData.forecast.slice(0, 3).map((forecastDay, index) => {
+                  const forecastDate = new Date();
+                  forecastDate.setDate(forecastDate.getDate() + index);
+                  let day = "";
+                  switch (getDayLabel(index)) {
+                    case "Lun":
+                      day = "Lundi";
+                      break;
+                    case "Mar":
+                      day = "Mardi";
+                      break;
+                    case "Mer":
+                      day = "Mercredi";
+                      break;
+                    case "Jeu":
+                      day = "Jeudi";
+                      break;
+                    case "Ven":
+                      day = "Vendredi";
+                      break;
+                    case "Sam":
+                      day = "Samedi";
+                      break;
+                    case "Dim":
+                      day = "Dimanche";
+                      break;
 
-                const temperatureColor = getTemperatureColor(forecastDay.tmin);
+                    default:
+                      day = "";
+                      break;
+                  }
+                  const temperatureColor = getTemperatureColor(
+                    forecastDay.tmin
+                  );
 
-                return (
-                  <div key={index} className="jour">
-                    <p>{getDayLabel(index)}</p>
+                  return (
+                    <div key={index} className="jour">
+                      {/*  <p>{getDayLabel(index)}</p> */}
+                      <p className="day">{day}</p>
 
-                    <p className="minimale" style={{ color: temperatureColor }}>
-                      Température minimale: {forecastDay.tmin} °C
-                    </p>
-                    <p className="maximale" style={{ color: temperatureColor }}>
-                      Température maximale: {forecastDay.tmax} °C
-                    </p>
-                  </div>
-                );
-              })}
+                      <div id="data">
+                        <p
+                          className="minimale"
+                          style={{ color: temperatureColor }}
+                        >
+                          Min: {forecastDay.tmin} °C
+                        </p>
+                        <p
+                          className="maximale"
+                          style={{ color: temperatureColor }}
+                        >
+                          Max: {forecastDay.tmax} °C
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           ) : (
             <p>Chargement des données météorologiques...</p>
@@ -96,9 +137,10 @@ const Homepage = () => {
       <div id="bandeau">
         <img className="bandeau" src={bandeau2} alt="un reparateur" />
       </div>
+      <ScrollingText text="Les activités de REPAIR CAFE reprendront le dernier Mardi de Janvier 2024." />
       <div className="cquoi">
         <h1>
-          REPAIR CAFE <spam className="spam1"> c'est quoi ?</spam>
+          REPAIR CAFE <span className="spam1"> c'est quoi ?</span>
         </h1>
         <div className="presentation">
           <img
@@ -106,7 +148,7 @@ const Homepage = () => {
             src={partage}
             alt="homme et enfant travail"
           />
-          <div class="element-avec-curseur-personnalise">
+          <div className="element-avec-curseur-personnalise">
             <p className="clear-left">
               Un "Repair Café" est un concept qui désigne un événement ou un
               lieu où des bénévoles compétents offrent gratuitement leurs
@@ -116,7 +158,7 @@ const Homepage = () => {
               réparation, la réutilisation et la réduction des déchets en
               encourageant les gens à prolonger la durée de vie de leurs biens
               plutôt que de les jeter et d'en acheter de nouveaux.
-              <hr /> Voici quelques caractéristiques courantes d'un Repair Café
+              <br /> Voici quelques caractéristiques courantes d'un Repair Café
               :
               <br />
               <br />
@@ -151,9 +193,9 @@ const Homepage = () => {
         </div>
       </div>
 
-      <article class="wrapper">
-        <div class="marquee">
-          <div class="marquee__group">
+      <article className="wrapper">
+        <div className="marquee">
+          <div className="marquee__group">
             <div>
               <img src={cheveux} alt="seche-cheveux" />
             </div>
@@ -180,8 +222,8 @@ const Homepage = () => {
             </div>
           </div>
         </div>
-        <div class="marquee marquee--reverse">
-          <div class="marquee__group">
+        <div className="marquee marquee--reverse">
+          <div className="marquee__group">
             <div>
               <img src={vaisselle} alt="lave-vaisselle" />
             </div>
@@ -211,7 +253,7 @@ const Homepage = () => {
       </article>
       <div className="benevole">
         <h1>
-          <spam className="spam3">Rejoindre</spam> Repair Café
+          <span className="spam3">Rejoindre</span> Repair Café
         </h1>
         <img
           className="img-benevole"
@@ -261,7 +303,7 @@ const Homepage = () => {
       </div>
       <div className="ou">
         <h1>
-          REPAIR CAFE <spam className="spam2">c'est où ?</spam>
+          REPAIR CAFE <span className="spam2">c'est où ?</span>
         </h1>
         <div className="lieu">
           <img id="lieu" src={outils6} alt="perceuse jaune" />
@@ -274,9 +316,9 @@ const Homepage = () => {
             src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d40709.84509992994!2d3.0909547426513573!3d50.378388099657606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1695883811798!5m2!1sfr!2sfr"
             width="300"
             height="200"
-            allowfullscreen=""
+            allowFullScreen=""
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
+            referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
       </div>
