@@ -1,5 +1,5 @@
 import React from "react";
-import "../scss/scrollingText.scss";
+import "../scss/_scrollingText.scss";
 
 class ScrollingText extends React.Component {
   render() {
