@@ -1,5 +1,5 @@
 import React from "react";
-import "../scss/_apropos.scss";
+
 import Navigation from "../components/Navigations";
 import Footer from "../components/Footer";
 
