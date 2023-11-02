@@ -10,7 +10,7 @@ function LaRoute() {
   return (
     <Router>
       <Routes>
-        <Route path="/RepairCafe-Courchelettes" element={<Homepage />} />
+        <Route path="/" element={<Homepage />} />
         <Route path="/apropos" element={<About />} />
         <Route path="/rgpd" element={<RGPD />} />
         <Route path="/membres" element={<Membres />} />

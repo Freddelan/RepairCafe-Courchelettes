@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Navigation from "../../components/Navigation.js";
+import Navigation from "../components/Navigation";
 import "../scss/homepage.scss";
 import bandeau2 from "../media/bandeau3.jpg";
 import partage from "../media/partage.jpg";
@@ -13,7 +13,7 @@ import machine from "../media/machine-a-laver.png";
 import vaisselle from "../media/lave-vaisselle.png";
 import four from "../media/four.png";
 import entretien from "../media/entretien.jpg";
-import Footer from "../../components/Footer.js";
+import Footer from "../components/Footer";
 import axios from "axios";
 import thermo from "../media/thermometre.png";
 const Homepage = () => {
